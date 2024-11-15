@@ -1,0 +1,27 @@
+# Node modules and dependencies
+node_modules
+package-lock.json
+npm-debug.log*
+
+# Build output directories
+build
+.svelte-kit
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Docker files
+Dockerfile
+docker-compose.yml
+
+# Git files
+.git
+.gitignore
+
+# Editor and OS files
+.vscode
+.idea
+.DS_Store
+Thumbs.db
