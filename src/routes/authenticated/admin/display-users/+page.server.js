@@ -1,7 +1,7 @@
 export async function load() {
     try {
         // Fetch data from the API
-        const response = await fetch('http://127.0.0.1:8002/users/get-all/');
+        const response = await fetch('http://fastapi-be-service/users/get-all/');
         const users = await response.json();
 
         // Check if the response was successful

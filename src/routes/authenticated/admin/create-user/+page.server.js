@@ -16,10 +16,10 @@ export const actions = {
         if (!UserName || !Email || !FirstName || !LastName || !password || !UserType) {
             return fail(400, { error: 'All fields are required!' });
         }
-
+        console.log("In code with proper URL for create user..")
         try {
             // Send data to FastAPI backend for user creation
-            const response = await fetch('http://127.0.0.1:8002/users/create-user/', {
+            const response = await fetch('http://fastapi-be-service/users/create-user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -44,6 +44,7 @@ export const actions = {
             return { success: 'User created successfully!' };
 
         } catch (err) {
+            console.log("Error: ", err)
             return fail(500, { error: 'Server error. Please try again later.' });
         }
     }

@@ -19,12 +19,13 @@ export const actions = {
         let response;
 
         try{
-            response = await fetch('http://127.0.0.1:8002/login/', {
+            response = await fetch('http://fastapi-be-service/login/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(payload),
+                credentials: 'include'
             });
             
         } catch (error) {
@@ -36,7 +37,11 @@ export const actions = {
             console.log("responseData :", responseData)
             // const token = responseData;
             cookies.set('session',JSON.stringify(responseData),{
-                path: '/'
+                path: '/',
+                secure: false,
+                httpOnly: false,
+                sameSite: 'lax',
+                maxAge: 60 * 60 * 24 * 7
             });
             console.log('Authenticated..')
             const token_from_cookie = cookies.get('session')

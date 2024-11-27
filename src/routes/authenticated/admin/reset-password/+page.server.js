@@ -16,7 +16,7 @@ export const actions = {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:8002/users/reset-password/', {
+            const response = await fetch('http://fastapi-be-service/users/reset-password/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

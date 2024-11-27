@@ -12,7 +12,7 @@ export const actions = {
 
         try {
             // Send request to delete the user
-            const response = await fetch('http://127.0.0.1:8002/users/delete-user/', {
+            const response = await fetch('http://fastapi-be-service/users/delete-user/', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
